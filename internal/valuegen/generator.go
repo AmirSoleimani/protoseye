@@ -36,6 +36,39 @@ func RandomValue(fieldKind string, isList bool) (any, error) {
 		output = map[string]any{"key1": "value1", "key2": "value2"}
 	case "google.protobuf.Any":
 		output = map[string]any{"@type": "string", "value": "yyy"}
+	case "google.protobuf.TimeOfDay":
+		output = map[string]any{
+			"hours":   22,
+			"minutes": 15,
+			"seconds": 23,
+			"nanos":   222,
+		}
+	case "google.protobuf.Color":
+		output = map[string]any{
+			"red":   0.2,
+			"green": 0.3,
+			"blue":  0.4,
+			"alpha": map[string]any{
+				"value": 1.0,
+			},
+		}
+	case "google.protobuf.Date":
+		output = map[string]any{
+			"year":  1993,
+			"month": 11,
+			"day":   27,
+		}
+	case "google.protobuf.LatLng":
+		output = map[string]any{
+			"latitude":  85.23,
+			"longitude": -23.44,
+		}
+	case "google.protobuf.Money":
+		output = map[string]any{
+			"currency_code": "EUR",
+			"units":         1,
+			"nanos":         750000000,
+		}
 	case "google.protobuf.Empty":
 		output = nil
 	default:
