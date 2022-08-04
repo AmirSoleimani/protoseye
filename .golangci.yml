@@ -1,0 +1,38 @@
+run:
+  concurrency: 4
+  timeout: 5m
+  skip_files:
+    - '.*\\.pb\\.go$'
+
+linters:
+  disable:
+    - gomnd
+    - deadcode
+    - gochecknoglobals
+    - godox
+    - gofmt
+    - wsl
+    - lll
+    - dupl
+    - gocognit
+    - funlen
+    - testpackage
+    - godot
+    - goconst
+    - goprintffuncname
+    - forbidigo
+    - noctx
+    - interfacer
+    - goimports
+    - nestif
+    - gochecknoinits
+    - maligned
+    - whitespace
+    - wrapcheck
+    - nlreturn
+    - exhaustivestruct
+    - wastedassign
+    - nilerr
+    - gofumpt
+    - gci
+    - cyclop
