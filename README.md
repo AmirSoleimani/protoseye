@@ -1,3 +1,5 @@
+<img align="right" height="200" src="https://user-images.githubusercontent.com/5120554/182931905-09cf1084-5158-4a89-a580-10fd44743d57.jpg">
+
 # ProtosEye
 Bird's-view of your proto RPCs in JSON.
 
