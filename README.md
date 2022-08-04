@@ -23,6 +23,13 @@ go install ./cmd/...
 protoc-gen-protoseye version
 ```
 
+## How to use!
+Once you install it, You can easily use it with `protoc`
+```sh
+find . -name '*.proto' -exec protoc -I=. \
+    --protoseye_out=./outputs {} \;
+```
+
 ### Example
 E.g. Input:
 ```protobuf
