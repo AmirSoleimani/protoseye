@@ -18,6 +18,7 @@ go install github.com/AmirSoleimani/protoseye/cmd/...
 2. From source code:
 ```sh
 git clone git@github.com:AmirSoleimani/protoseye.git
+cd protoseye
 go install ./cmd/...
 protoc-gen-protoseye version
 ```
