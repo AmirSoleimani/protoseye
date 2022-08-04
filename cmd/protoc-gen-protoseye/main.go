@@ -11,17 +11,14 @@ import (
 )
 
 type Flags struct {
-	PathPrefix string
+	// MARK: put your flags here
 }
-
-var f = Flags{}
 
 func main() {
 	log.SetFlags(0)
 	log.SetOutput(os.Stderr)
 
 	var fs flag.FlagSet
-	fs.StringVar(&f.PathPrefix, "path_prefix", "/rpc", "")
 
 	protoOpts := protogen.Options{ParamFunc: fs.Set}
 	protoOpts.
