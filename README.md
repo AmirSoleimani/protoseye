@@ -67,3 +67,4 @@ This tool helps you to generate JSON output of your RPC's Request/Response with 
 ## TODOs
 - [ ] Enhance test coverage.
 - [ ] Generate random value more intelligent and particular. (E.g. google.protobuf.TimeOfDay)
+- [ ] Support config file in order to fill data by using custom input.
