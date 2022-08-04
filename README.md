@@ -71,7 +71,7 @@ Output:
 ```
 
 ## Motivation
-It's not easy to design a proto file and have a good insight into the output (It gets worse when you have an enormous payload). This tool helps you generate a JSON view of the RPC's Request and Response.
+If you have a complex data structure, getting a good insight into the input and output of your RPCs won't be easy (It gets worse when you have an enormous payload). This tool helps you generate a JSON representation of the RPC request and response.
 
 ## TODOs
 - [ ] Enhance test coverage.
