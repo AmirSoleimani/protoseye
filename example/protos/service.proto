@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package protos.user;
+
+import "protos/user.proto";
+import "google/any.proto";
+import "google/duration.proto";
+import "google/empty.proto";
+import "google/struct.proto";
+import "google/timestamp.proto";
+import "google/wrappers.proto";
+
+option go_package = "github.com/AmirSoleimani/protoseye/example";
+
+service UserService {
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+    string user_id = 1;
+}
+
+message GetUserResponse {
+    string user_id = 1;
+    string name = 2;
+    string email = 3;
+    int32 age = 4;
+    UserType user_type = 5;
+
+    oneof user_root {
+        UserHabit user_habit = 6;
+        UserFather user_father = 7;
+    }
+
+    // Will be skipped because the key is not string
+    // and JSON doesn't support non-string keys.
+    map<int32, string> another_map = 8;
+
+    google.protobuf.Any another_any = 9;
+    google.protobuf.Duration another_duration = 10;
+    google.protobuf.Empty another_empty = 11;
+    google.protobuf.Struct another_struct = 12;
+    google.protobuf.Timestamp another_timestamp = 13;
+    google.protobuf.DoubleValue another_wrappers_double = 14;
+    google.protobuf.Int64Value another_wrappers_int64 = 15;
+    map<string, google.protobuf.Any> another_map_any = 18;
+
+    map<string, string> another_map_string = 19;
+    string updated_at = 20;
+}
+

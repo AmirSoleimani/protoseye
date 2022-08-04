@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package protos.user;
+
+option go_package = "github.com/AmirSoleimani/protoseye/example";
+
+enum UserType {
+    ADMIN = 0;
+    USER = 1;
+}
+
+message UserHabit {
+    string name = 1;
+    int32 count = 2;
+    map<string, int32> isolation = 3;
+    map<string, Tracker> tracker = 4;
+}
+
+message Tracker {
+    string name = 1;
+    int32 count = 2;
+}
+
+message UserFather {
+    string name = 1;
+    int32 age = 2;
+    UserGrandmother grandmother = 3;
+}
+
+message UserGrandmother {
+    string name = 1;
+    int32 age = 2;
+    UserHabit habit = 3;
+}
