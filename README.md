@@ -1,20 +1,11 @@
 # ProtosEye
-Bird's-view of your proto RPCs.
+Bird's-view of your proto RPCs in JSON.
 
-## Motivation
-It's not easy to design a proto file and have a good insight into the output (It gets worse when you have a big payload). 
-This tool helps you to generate JSON output of your RPC's Request/Response with sample values by considering the relation between messages.
+## Supports
+✅ Supports `google.protobuf.*` types.
 
-### Example
-E.g. Input:
-```protobuf
-// TODO
-```
+✅ Supports all standard protobuf types.
 
-Output:
-```json
-// TODO
-```
 
 ## Installation
 Here are two ways that you can install this tool.
@@ -31,9 +22,48 @@ go install ./cmd/...
 protoc-gen-protoseye version
 ```
 
-## Supports
-^ TODO type table
+### Example
+E.g. Input:
+```protobuf
+message GetBirdRequest {
+    string id = 1;
+}
+
+message GetBirdResponse {
+    string id = 1;
+    string name = 2;
+    int age = 3;
+    google.protobuf.Timestamp created_at = 4;
+}
+
+service BirdService {
+    rpc GetBird(GetBirdRequest) GetBirdResponse;
+}
+```
+
+Output:
+```json
+// BirdService_bird.GetBirdRequest.json
+{
+    "id": "mystring"
+}
+
+// BirdService_bird.GetBirdResponse.json
+{
+    "id": "mystring",
+    "name": "name",
+    "age": 13,
+    "created_at": {
+        "nanos": 32,
+        "seconds": 64
+    }
+}
+```
+
+## Motivation
+It's not easy to design a proto file and have a good insight into the output (It gets worse when you have a big payload). 
+This tool helps you to generate JSON output of your RPC's Request/Response with sample values by considering the relation between messages.
 
 ## TODOs
 - [ ] Enhance test coverage.
-- [ ] More creative and intelligent while generating random values.
+- [ ] Generate random value more intelligent and particular. (E.g. google.protobuf.TimeOfDay)
