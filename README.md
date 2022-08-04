@@ -12,7 +12,7 @@ Here are two ways that you can install this tool.
 
 1. Go install:
 ```sh
-go install github.com/AmirSoleimani/protoseye@v1.0.0
+go install github.com/AmirSoleimani/protoseye/cmd/...
 ```
 
 2. From source code:
