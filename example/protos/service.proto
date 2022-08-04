@@ -9,6 +9,12 @@ import "google/empty.proto";
 import "google/struct.proto";
 import "google/timestamp.proto";
 import "google/wrappers.proto";
+import "google/color.proto";
+import "google/date.proto";
+import "google/dayofweek.proto";
+import "google/latlng.proto";
+import "google/money.proto";
+import "google/postal_address.proto";
 
 option go_package = "github.com/AmirSoleimani/protoseye/example";
 
@@ -43,9 +49,14 @@ message GetUserResponse {
     google.protobuf.Timestamp another_timestamp = 13;
     google.protobuf.DoubleValue another_wrappers_double = 14;
     google.protobuf.Int64Value another_wrappers_int64 = 15;
-    map<string, google.protobuf.Any> another_map_any = 18;
-
-    map<string, string> another_map_string = 19;
-    string updated_at = 20;
+    google.protobuf.Color another_color = 16;
+    google.protobuf.Date another_date = 17;
+    google.protobuf.DayOfWeek another_dayofweek = 18;
+    google.protobuf.LatLng another_latlng = 19;
+    google.protobuf.Money another_money = 20;
+    google.protobuf.PostalAddress another_postal_address = 21;
+    map<string, google.protobuf.Any> another_map_any = 22;
+    map<string, string> another_map_string = 23;
+    string updated_at = 24;
 }
 
