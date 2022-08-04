@@ -1,23 +1,28 @@
 <img align="right" height="200" src="https://user-images.githubusercontent.com/5120554/182931905-09cf1084-5158-4a89-a580-10fd44743d57.jpg">
 
 # ProtosEye
+
 Bird's-view of your proto RPCs in JSON.
 
 ## Supports
+
 ✅ Supports `google.protobuf.*` types.
 
 ✅ Supports all standard protobuf types.
 
 
 ## Installation
+
 Here are two ways that you can install this tool.
 
 1. Go install:
+
 ```sh
 go install github.com/AmirSoleimani/protoseye/cmd/...
 ```
 
 2. From source code:
+
 ```sh
 git clone git@github.com:AmirSoleimani/protoseye.git
 cd protoseye
@@ -26,14 +31,18 @@ protoc-gen-protoseye version
 ```
 
 ## How to use!
+
 Once you install it, You can easily use it with `protoc`
+
 ```sh
 find . -name '*.proto' -exec protoc -I=. \
     --protoseye_out=./outputs {} \;
 ```
 
 ### Example
+
 E.g. Input:
+
 ```protobuf
 message GetBirdRequest {
     string id = 1;
@@ -52,6 +61,7 @@ service BirdService {
 ```
 
 Output:
+
 ```json
 // BirdService_bird.GetBirdRequest.json
 {
@@ -71,9 +81,12 @@ Output:
 ```
 
 ## Motivation
+
 If you have a complex data structure, getting a good insight into the input and output of your RPCs won't be easy (It gets worse when you have an enormous payload). This tool helps you generate a JSON representation of the RPC request and response.
 
 ## TODOs
+
 - [ ] Enhance test coverage.
 - [ ] Generate smarter and more specific random values.
-- [ ] Config file support for filling data using custom input.
+- [ ] Support custom and predefined field value.
+- [ ] Support Directory Tree style besides JSON.
